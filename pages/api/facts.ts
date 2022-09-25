@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { BASE_URL } from "../baseUrl";
 
-const getAllFacts = async (pageNumber: string, factsPerPage: string) => {
+const getFacts = async (pageNumber: string, factsPerPage: string) => {
   let queryURL = BASE_URL + "?page=" + pageNumber + "&limit=" + factsPerPage;
   try {
     const res = await fetch(queryURL);
@@ -44,10 +44,10 @@ const sortDataDescending = (criteria: string, data: any[]) => {
 };
 
 const filterByLength = (targetLength: number, data: any[]) => {
-  const results = data.filter((fact) => {
+  const filteredResults = data.filter((fact) => {
     return fact.length === targetLength;
   });
-  return results;
+  return filteredResults;
 };
 
 export default async function handler(
@@ -58,13 +58,13 @@ export default async function handler(
   let { page, per_page, sort, length_filter } = query;
 
   if (!page && !per_page) {
-    let allFactsCount = await getAllFacts("1", "1");
+    let allFactsCount = await getFacts("1", "1");
     page = "1";
     per_page = allFactsCount.total;
   }
 
   // @ts-ignore
-  let allFactsData = await getAllFacts(page, per_page);
+  let allFactsData = await getFacts(page, per_page);
 
   let factsDataWithIDs = await addIDToFactsData(
     // @ts-ignore
