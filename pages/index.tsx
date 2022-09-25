@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           </a>
 
           <a href="/api/fact/10" target="_blank" className={styles.card}>
-            <h2>Get fact by ID &rarr;</h2>
+            <h2>Get single<br/>fact by ID &rarr;</h2>
             <p>
               /api/fact/10
             </p>
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
           <a href="/api/facts?page=5&per_page=20&sort=length_ascending" target="_blank" className={styles.card}>
             <h2>Get paginated facts sorted by length ascending &rarr;</h2>
             <p>
-              /api/facts?page=5&per_page=20&sort=length_ascending
+              /api/facts?page=5&per_page=20<br/>&sort=length_ascending
             </p>
           </a>
 
