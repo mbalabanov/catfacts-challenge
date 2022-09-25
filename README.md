@@ -1,19 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A simple REST API for cat facts with some additional parameters.
 
 ## Descripion
 - This is a REST API using Next.js with TypeScript
-    - It integrates with an external catfact API at https://catfact.ninja/
-    - This API gets data from https://catfact.ninja/facts and provides it on `localhost:3000/api/...`
-    - It uses API routes of Next.js
+    - This API integrates with an external catfact API at [https://catfact.ninja/](https://catfact.ninja/)
+    - It gets its data from [https://catfact.ninja/facts](https://catfact.ninja/facts) and provides it on `localhost:3000/api/...`.
+    - It uses API routes of Next.js.
+    - It only implements GET responses.
 
 ## Getting Started
 
-To run the development server:
+After you run `npm install`, run the development server by entering the following:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the instructions.
@@ -51,13 +50,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```bash
 npm next build
-# or
-yarn next build
 ```
 
 After building:
 ```bash
 npm start
-# or
-yarn run start
 ```
