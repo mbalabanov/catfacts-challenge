@@ -24,28 +24,28 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     - Get **multiple** cat facts at `/api/facts`
     - Get **individual** cat facts by ID at `/api/fact/15`
 
-- The following parameters can be added **optionally**:
+- The following parameters can be **optionally** added to the URL `/api/facts` (chaining with `?` and `&`):
   - For pagination:
-    - page=1
-    - per_page=10
+    - `page=1`
+    - `per_page=10`
   - For sorting:
-    - sort=alphabetic
-    - sort=reverse_alphabetic
-    - sort=length_ascending
-    - sort=length_descending
-  - For filtering:
-    - length_filter=60
+    - `sort=alphabetic`
+    - `sort=reverse_alphabetic`
+    - `sort=length_ascending`
+    - `sort=length_descending`
+  - For filtering by length:
+    - `length_filter=60`
 
 ### Examples:
-  - Get **all** available cat facts unsorted at `/api/facts`
-  - Get **all** available cat facts in **alphabetic order** at `/api/facts?sort=alphabetic`
-  - Get **all** available cat facts **sorted by length ascending** at `/api/facts?sort=length_ascending`
-  - Get all cat facts **paginated** at `/api/facts?page=3&per_page=20`
-  - Get all cat facts **paginated and sorted alphabetically** at `/api/facts?page=3&per_page=20&sort=alphabetic`
-  - Get all cat facts **paginated and sorted by length ascending** at `/api/facts?page=3&per_page=20&sort=length_ascending`
-  - Get all cat facts paginated and in **reverse alphabetic order** at `/api/facts?page=3&per_page=20&sort=reverse_alphabetic`
-  - Get all cat facts paginated and sorted by length **descending** at `/api/facts?page=3&per_page=20&sort=length_descending`
-  - get all cat facts **filtered by a certain length** at `/api/facts?length_filter=60`
+  - **All** available cat facts unsorted at `/api/facts`
+  - **All** available cat facts in **alphabetic order** at `/api/facts?sort=alphabetic`
+  - **All** available cat facts **sorted by length ascending** at `/api/facts?sort=length_ascending`
+  - Cat facts **paginated** at `/api/facts?page=3&per_page=20`
+  - Cat facts paginated and **sorted alphabetically** at `/api/facts?page=3&per_page=20&sort=alphabetic`
+  - Cat facts paginated and **sorted by length ascending** at `/api/facts?page=3&per_page=20&sort=length_ascending`
+  - Cat facts paginated and in **reverse alphabetic order** at `/api/facts?page=3&per_page=20&sort=reverse_alphabetic`
+  - Cat facts paginated and sorted by **length descending** at `/api/facts?page=3&per_page=20&sort=length_descending`
+  - Cat facts **filtered by a certain length** at `/api/facts?length_filter=60`
 
 ## Building
 
