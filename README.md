@@ -15,6 +15,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
     - Get all cat facts **paginated and sorted by length ascending** at /api/facts?page=3&per_page=20&sort=length_ascending
     - Get all cat facts paginated and in **reverse alphabetic order** at /api/facts?page=3&per_page=20&sort=reverse_alphabetic
     - Get all cat facts paginated and sorted by length **descending** at /api/facts?page=3&per_page=20&sort=length_descending
+    - get all cat facts **filtered by a certain length** at /api/facts?length_filter=60
 
 ## Getting Started
 

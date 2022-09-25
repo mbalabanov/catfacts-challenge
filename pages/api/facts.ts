@@ -43,12 +43,19 @@ const sortDataDescending = (criteria: string, data: any[]) => {
   return data.sort((a, b) => (a[criteria] < b[criteria] ? 1 : -1));
 };
 
+const filterByLength = (targetLength: number, data: any[]) => {
+  const results = data.filter((fact) => {
+    return fact.length === targetLength;
+  });
+  return results;
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const query = req.query;
-  let { page, per_page, sort } = query;
+  let { page, per_page, sort, length_filter } = query;
 
   if (!page && !per_page) {
     let allFactsCount = await getAllFacts("1", "1");
@@ -80,6 +87,10 @@ export default async function handler(
 
   if (sort === "reverse_alphabetic") {
     factsDataWithIDs = sortDataDescending("fact", factsDataWithIDs);
+  }
+
+  if (length_filter) {
+    factsDataWithIDs = filterByLength(Number(length_filter), factsDataWithIDs);
   }
 
   res.status(200).json(factsDataWithIDs);

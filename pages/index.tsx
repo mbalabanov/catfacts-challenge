@@ -99,6 +99,13 @@ const Home: NextPage = () => {
             </p>
           </a>
 
+          <a href="/api/facts?length_filter=60" target="_blank" className={styles.card}>
+            <h2>Get all facts with a certain length &rarr;</h2>
+            <p>
+              /api/facts?length_filter=60
+            </p>
+          </a>
+
         </div>
       </main>
     </div>

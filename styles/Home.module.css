@@ -52,11 +52,12 @@
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid gray;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 600px;
   background-color: white;
+  box-shadow: 0 0 8px gray;
 }
 
 .card:hover,
