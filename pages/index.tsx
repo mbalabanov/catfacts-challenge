@@ -29,6 +29,13 @@ const Home: NextPage = () => {
             </p>
           </a>
 
+          <a href="/api/fact/10" target="_blank" className={styles.card}>
+            <h2>Get single fact by ID &rarr;</h2>
+            <p>
+              /api/fact/10
+            </p>
+          </a>
+
           <a href="/api/facts?page=2&per_page=5" target="_blank" className={styles.card}>
             <h2>Get paginated facts &rarr;</h2>
             <p>
@@ -47,13 +54,6 @@ const Home: NextPage = () => {
             <h2>Get paginated facts with alphabetic sorting &rarr;</h2>
             <p>
               /api/facts?page=12&per_page=10&sort=alphabetic
-            </p>
-          </a>
-
-          <a href="/api/fact/10" target="_blank" className={styles.card}>
-            <h2>Get single fact by ID &rarr;</h2>
-            <p>
-              /api/fact/10
             </p>
           </a>
 
