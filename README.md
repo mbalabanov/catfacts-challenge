@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Descripion
 - This is a REST API using Next.js with TypeScript
     - It integrates with an external catfact API at https://catfact.ninja/
-    - This API gets data from https://catfact.ninja/facts and provides it on Localhost:3000/api/...
+    - This API gets data from https://catfact.ninja/facts and provides it on `localhost:3000/api/...`
     - It uses API routes of Next.js
 
 ## Getting Started
@@ -47,7 +47,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   - Cat facts paginated and sorted by **length descending** at `/api/facts?page=3&per_page=20&sort=length_descending`
   - Cat facts **filtered by a certain length** at `/api/facts?length_filter=60`
 
-## Building
+## Building for Production
 
 ```bash
 npm next build
@@ -55,3 +55,9 @@ npm next build
 yarn next build
 ```
 
+After building:
+```bash
+npm start
+# or
+yarn run start
+```
