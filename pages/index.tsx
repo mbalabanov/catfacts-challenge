@@ -29,6 +29,13 @@ const Home: NextPage = () => {
             </p>
           </a>
 
+          <a href="/api/facts?page=2&per_page=5" target="_blank" className={styles.card}>
+            <h2>Get paginated facts &rarr;</h2>
+            <p>
+              /api/facts?page=2&per_page=5
+            </p>
+          </a>
+
           <a href="/api/facts?sort=alphabetic" target="_blank" className={styles.card}>
             <h2>All facts sorted alphabetically &rarr;</h2>
             <p>
@@ -36,22 +43,15 @@ const Home: NextPage = () => {
             </p>
           </a>
 
-          <a href="/api/facts?page=2&per_page=5" target="_blank" className={styles.card}>
-            <h2>Get paginated facts &rarr;</h2>
-            <p>
-              /api/facts?page=2<br/>&per_page=5
-            </p>
-          </a>
-
           <a href="/api/facts?page=12&per_page=10&sort=alphabetic" target="_blank" className={styles.card}>
             <h2>Get paginated facts with alphabetic sorting &rarr;</h2>
             <p>
-              /api/facts?page=12<br/>&per_page=10&sort=alphabetic
+              /api/facts?page=12&per_page=10&sort=alphabetic
             </p>
           </a>
 
           <a href="/api/fact/10" target="_blank" className={styles.card}>
-            <h2>Get single<br/>fact by ID &rarr;</h2>
+            <h2>Get single fact by ID &rarr;</h2>
             <p>
               /api/fact/10
             </p>
@@ -67,7 +67,35 @@ const Home: NextPage = () => {
           <a href="/api/facts?page=5&per_page=20&sort=length_ascending" target="_blank" className={styles.card}>
             <h2>Get paginated facts sorted by length ascending &rarr;</h2>
             <p>
-              /api/facts?page=5&per_page=20<br/>&sort=length_ascending
+              /api/facts?page=5&per_page=20&sort=length_ascending
+            </p>
+          </a>
+
+          <a href="/api/facts?sort=length_descending" target="_blank" className={styles.card}>
+            <h2>Get all facts sorted by length descending &rarr;</h2>
+            <p>
+              /api/facts?sort=length_descending
+            </p>
+          </a>
+
+          <a href="/api/facts?page=4&per_page=15&sort=length_descending" target="_blank" className={styles.card}>
+            <h2>Get paginated facts sorted by length descending &rarr;</h2>
+            <p>
+              /api/facts?page=4&per_page=15&sort=length_ascending
+            </p>
+          </a>
+
+          <a href="/api/facts?sort=reverse_alphabetic" target="_blank" className={styles.card}>
+            <h2>All facts sorted in reverse alphabetic order &rarr;</h2>
+            <p>
+              /api/facts?sort=reverse_alphabetic
+            </p>
+          </a>
+
+          <a href="/api/facts?page=12&per_page=10&sort=reverse_alphabetic" target="_blank" className={styles.card}>
+            <h2>Get paginated facts in reverse alphabetic order &rarr;</h2>
+            <p>
+              /api/facts?page=12&per_page=10&sort=reverse_alphabetic
             </p>
           </a>
 

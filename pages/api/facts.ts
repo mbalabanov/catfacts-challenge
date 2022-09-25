@@ -45,8 +45,12 @@ const addIDToFactsData = (
   return factsDataWithID;
 };
 
-const sortData = (criteria: string, data: any[]) => {
+const sortDataAscending = (criteria: string, data: any[]) => {
   return data.sort((a, b) => (a[criteria] > b[criteria] ? 1 : -1));
+};
+
+const sortDataDescending = (criteria: string, data: any[]) => {
+  return data.sort((a, b) => (a[criteria] < b[criteria] ? 1 : -1));
 };
 
 export default async function handler(
@@ -68,11 +72,19 @@ export default async function handler(
   let factsDataWithIDs = await addIDToFactsData(page, per_page, allFactsData);
 
   if (sort === "alphabetic") {
-    factsDataWithIDs = sortData("fact", factsDataWithIDs);
+    factsDataWithIDs = sortDataAscending("fact", factsDataWithIDs);
   }
 
   if (sort === "length_ascending") {
-    factsDataWithIDs = sortData("length", factsDataWithIDs);
+    factsDataWithIDs = sortDataAscending("length", factsDataWithIDs);
+  }
+
+  if (sort === "length_descending") {
+    factsDataWithIDs = sortDataDescending("length", factsDataWithIDs);
+  }
+
+  if (sort === "reverse_alphabetic") {
+    factsDataWithIDs = sortDataDescending("fact", factsDataWithIDs);
   }
 
   res.status(200).json(factsDataWithIDs);
