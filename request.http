@@ -1,0 +1,19 @@
+
+### Get one random fact
+GET https://catfact.ninja/fact
+
+### Get all facts
+GET https://catfact.ninja/facts
+
+### Get facts by page
+GET https://catfact.ninja/facts?page=2
+## 34 Pages in total with 332 items
+
+### Get facts by page with a limit per page
+GET https://catfact.ninja/facts?page=2&limit=5
+
+### Get Swagger documentation
+GET https://catfact.ninja/
+
+### Get documentation
+GET https://catfact.ninja/docs/
