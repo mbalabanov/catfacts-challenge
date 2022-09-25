@@ -1,11 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { BASE_URL } from "../baseUrl";
 
-const getFacts = async (pageNumber: string, factsPerPage: string) => {
+const getFacts = async (pageNumber: string, factsPerPage: string = "10") => {
   let queryURL = BASE_URL + "?page=" + pageNumber + "&limit=" + factsPerPage;
   try {
     const res = await fetch(queryURL);
     const data = await res.json();
+    console.log(data.data);
     return data;
   } catch (err) {
     return err;
@@ -13,20 +14,20 @@ const getFacts = async (pageNumber: string, factsPerPage: string) => {
 };
 
 const addIDToFactsData = (
-  page: number,
-  factsPerPage: number,
+  page: number = 1,
+  factsPerPage: number = 10,
   data: { fact: string; length: number }[]
 ) => {
-  let startingIndex = 0;
+  let startingID = 1;
 
   if (page > 1) {
-    startingIndex = Number(page) - 1 + Number(factsPerPage);
+    startingID = Number(page) - 1 + Number(factsPerPage);
   }
 
   let factsDataWithID: { id: number; data: any }[] = [];
   data.forEach((dataEntry: { fact: string; length: number }, index: number) => {
     factsDataWithID.push({
-      id: startingIndex + index,
+      id: startingID + index,
       // @ts-ignore
       fact: dataEntry.fact,
       length: dataEntry.length,
