@@ -1,4 +1,4 @@
-A simple REST API for cat facts with some additional parameters.
+**TLDR:** A simple REST API for cat facts with some additional parameters.
 
 ## Descripion
 - This is a REST API using Next.js with TypeScript
