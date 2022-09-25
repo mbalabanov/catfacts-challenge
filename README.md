@@ -18,13 +18,13 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the instructions.
 
-### Endpoints and Parameters
+## Endpoints and Parameters
 
-- You can get data from the following API endpoints:
-    - Get **multiple** cat facts at `/api/facts`
-    - Get **individual** cat facts by ID at `/api/fact/15`
+- You can get data from the following API **endpoints**:
+    - Get **multiple** cat facts at `localhost:3000/api/facts`
+    - Get **individual** cat facts by ID at `localhost:3000/api/fact/15`
 
-- The following parameters can be **optionally** added to the URL `/api/facts` (chaining with `?` and `&`):
+- The following **parameters** can be _optionally_ added to the URL `/api/facts` (chaining with `?` and `&`):
   - For pagination:
     - `page=1`
     - `per_page=10`
@@ -45,7 +45,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
   - Cat facts paginated and **sorted by length ascending** at `/api/facts?page=3&per_page=20&sort=length_ascending`
   - Cat facts paginated and in **reverse alphabetic order** at `/api/facts?page=3&per_page=20&sort=reverse_alphabetic`
   - Cat facts paginated and sorted by **length descending** at `/api/facts?page=3&per_page=20&sort=length_descending`
-  - Cat facts **filtered by a certain length** at `/api/facts?length_filter=60`
+  - Cat facts **filtered by a specific length** at `/api/facts?length_filter=60`
 
 ## Building for Production
 

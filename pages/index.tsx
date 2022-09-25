@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         </h1>
 
         <p className={styles.description}>
-          A quick API for getting Cat Facts.<br/>Please try the following endpoints:
+          A quick API for getting Cat Facts.<br/>Please try the following endpoints.
         </p>
 
         <div className={styles.grid}>
