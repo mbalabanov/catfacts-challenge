@@ -23,10 +23,16 @@ const Home: NextPage = () => {
         <div className={styles.grid}>
 
           <a href="/api/facts" target="_blank" className={styles.card}>
-            <h2>All available facts &rarr;</h2>
+            <h2>All available facts (unsorted) &rarr;</h2>
             <p>
               /api/facts
-              <br/><br/>
+            </p>
+          </a>
+
+          <a href="/api/facts?sort=alphabetic" target="_blank" className={styles.card}>
+            <h2>All facts sorted alphabetically &rarr;</h2>
+            <p>
+              /api/facts?sort=alphabetic
             </p>
           </a>
 
@@ -37,11 +43,31 @@ const Home: NextPage = () => {
             </p>
           </a>
 
+          <a href="/api/facts?page=12&per_page=10&sort=alphabetic" target="_blank" className={styles.card}>
+            <h2>Get paginated facts with alphabetic sorting &rarr;</h2>
+            <p>
+              /api/facts?page=12<br/>&per_page=10&sort=alphabetic
+            </p>
+          </a>
+
           <a href="/api/fact/10" target="_blank" className={styles.card}>
             <h2>Get fact by ID &rarr;</h2>
             <p>
               /api/fact/10
-              <br/><br/>
+            </p>
+          </a>
+
+          <a href="/api/facts?sort=length_ascending" target="_blank" className={styles.card}>
+            <h2>Get all facts sorted by length ascending &rarr;</h2>
+            <p>
+              /api/facts?sort=length_ascending
+            </p>
+          </a>
+
+          <a href="/api/facts?page=5&per_page=20&sort=length_ascending" target="_blank" className={styles.card}>
+            <h2>Get paginated facts sorted by length ascending &rarr;</h2>
+            <p>
+              /api/facts?page=5&per_page=20&sort=length_ascending
             </p>
           </a>
 

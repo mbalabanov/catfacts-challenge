@@ -45,12 +45,19 @@ const addIDToFactsData = (
   return factsDataWithID;
 };
 
+const sortData = (criteria: string, data: any[]) => {
+  return data.sort((a, b) => (a[criteria] > b[criteria] ? 1 : -1));
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const query = req.query;
-  let { page, per_page } = query;
+  let { page, per_page, sort } = query;
+
+  console.log("*** page, per_page, sort ***");
+  console.log(sort);
 
   if (!page && !per_page) {
     let allFactsCount = await totalFactsCount();
@@ -62,5 +69,14 @@ export default async function handler(
   let allFactsData = await getAllFacts(page, per_page);
   // @ts-ignore
   let factsDataWithIDs = await addIDToFactsData(page, per_page, allFactsData);
+
+  if (sort === "alphabetic") {
+    factsDataWithIDs = sortData("fact", factsDataWithIDs);
+  }
+
+  if (sort === "length_ascending") {
+    factsDataWithIDs = sortData("length", factsDataWithIDs);
+  }
+
   res.status(200).json(factsDataWithIDs);
 }
