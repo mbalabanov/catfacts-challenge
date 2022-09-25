@@ -21,25 +21,27 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
-          
-          <a href="/api/randomfact" target="_blank" className={styles.card}>
-            <h2>Random cat fact &rarr;</h2>
-            <p>
-              /api/randomfact
-            </p>
-          </a>
 
           <a href="/api/facts" target="_blank" className={styles.card}>
-            <h2>All facts (with ID) &rarr;</h2>
+            <h2>All available facts &rarr;</h2>
             <p>
               /api/facts
+              <br/><br/>
             </p>
           </a>
 
           <a href="/api/facts?page=2&per_page=5" target="_blank" className={styles.card}>
             <h2>Get paginated facts &rarr;</h2>
             <p>
-              /api/facts?page=2&per_page=5
+              /api/facts?page=2<br/>&per_page=5
+            </p>
+          </a>
+
+          <a href="/api/fact/10" target="_blank" className={styles.card}>
+            <h2>Get fact by ID &rarr;</h2>
+            <p>
+              /api/fact/10
+              <br/><br/>
             </p>
           </a>
 

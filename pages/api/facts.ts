@@ -1,10 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
-const baseURL = "https://catfact.ninja/facts";
+import { BASE_URL } from "../baseUrl";
 
 const totalFactsCount = async () => {
   try {
-    const res = await fetch(`https://catfact.ninja/facts`);
+    const res = await fetch(BASE_URL);
     const data = await res.json();
     return data.total;
   } catch (err) {
@@ -13,7 +12,7 @@ const totalFactsCount = async () => {
 };
 
 const getAllFacts = async (pageNumber: string, factsPerPage: string) => {
-  let queryURL = baseURL + "?page=" + pageNumber + "&limit=" + factsPerPage;
+  let queryURL = BASE_URL + "?page=" + pageNumber + "&limit=" + factsPerPage;
   try {
     const res = await fetch(queryURL);
     const data = await res.json();
@@ -31,7 +30,7 @@ const addIDToFactsData = (
   let startingIndex = 0;
 
   if (page > 1) {
-    startingIndex = Number(page) - 1 + Number(factsPerPage) - 1;
+    startingIndex = Number(page) - 1 + Number(factsPerPage);
   }
 
   let factsDataWithID: { id: number; data: any }[] = [];
