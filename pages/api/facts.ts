@@ -6,7 +6,6 @@ const getFacts = async (pageNumber: string, factsPerPage: string = "10") => {
   try {
     const res = await fetch(queryURL);
     const data = await res.json();
-    console.log(data.data);
     return data;
   } catch (err) {
     return err;
