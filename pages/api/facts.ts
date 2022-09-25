@@ -56,9 +56,6 @@ export default async function handler(
   const query = req.query;
   let { page, per_page, sort } = query;
 
-  console.log("*** page, per_page, sort ***");
-  console.log(sort);
-
   if (!page && !per_page) {
     let allFactsCount = await totalFactsCount();
     page = "1";
