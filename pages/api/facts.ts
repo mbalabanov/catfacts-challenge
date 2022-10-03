@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { v4 as uuidv4 } from "uuid";
+
 import { BASE_URL } from "../baseUrl";
 
 const getFacts = async (pageNumber: string, factsPerPage: string = "10") => {
@@ -23,16 +25,14 @@ const addIDToFactsData = (
     startingID = Number(page) - 1 + Number(factsPerPage);
   }
 
-  let factsDataWithID: { id: number; data: any }[] = [];
-  data.forEach((dataEntry: { fact: string; length: number }, index: number) => {
-    factsDataWithID.push({
-      id: startingID + index,
-      // @ts-ignore
-      fact: dataEntry.fact,
-      length: dataEntry.length,
-    });
+  const dataWithID = data.map((dataItem: object) => {
+    return {
+      ...dataItem,
+      id: uuidv4(),
+    };
   });
-  return factsDataWithID;
+
+  return dataWithID;
 };
 
 const sortDataAscending = (criteria: string, data: any[]) => {
