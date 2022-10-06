@@ -21,7 +21,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - You can get data from the following API **endpoints**:
     - Get **multiple** cat facts at `localhost:3000/api/facts`
-    - Get **individual** cat facts by ID at `localhost:3000/api/fact/15`
 
 - The following **parameters** can be _optionally_ added to the URL `/api/facts` (chaining with `?` and `&`):
   - For pagination:
